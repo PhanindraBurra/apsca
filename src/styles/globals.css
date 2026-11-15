@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Logo-Derived Color System */
+  --primary: #1A2B4C;         /* Deep Navy Blue from outer ring and saw insignia */
+  --primary-hover: #111E36;   /* Darker Navy for hover */
+  --primary-dark: #0F1A30;    /* Midnight Navy for high-contrast sections */
+  --primary-light: #2A4374;   /* Mid Navy Blue for cards & badges */
+  --primary-soft: rgba(26, 43, 76, 0.08);
+
+  --secondary: #C81E1E;       /* Crimson Red from ribbon and APSCA banners */
+  --secondary-hover: #9E1414; /* Deep Crimson for hover states */
+  --secondary-soft: rgba(200, 30, 30, 0.08);
+
+  --accent: #F5B301;          /* Vibrant Gold/Yellow from starburst and center emblem */
+  --accent-hover: #D69C00;    /* Amber Gold hover */
+  --accent-light: #FFF9E6;    /* Soft gold background */
+  --accent-glow: rgba(245, 179, 1, 0.35);
+
+  /* Approved Neutrals */
+  --neutral-white: #FFFFFF;
+  --neutral-50: #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
+
+  /* Typography */
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-telugu: 'Noto Sans Telugu', sans-serif;
+
+  /* Elevations & Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --shadow-xl: 0 20px 35px rgba(15, 23, 42, 0.18);
+  --shadow-primary: 0 8px 20px rgba(26, 43, 76, 0.25);
+  --shadow-secondary: 0 8px 20px rgba(200, 30, 30, 0.25);
+  --shadow-accent: 0 8px 20px rgba(245, 179, 1, 0.3);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--neutral-50);
+  color: var(--neutral-800);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.telugu-text {
+  font-family: var(--font-telugu), var(--font-main);
+  line-height: 1.8;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 2.5vw, 40px);
+  padding-right: clamp(16px, 2.5vw, 40px);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Button Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-secondary);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  color: var(--primary);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--neutral-white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--neutral-white);
+  border-color: var(--neutral-white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--neutral-white);
+  color: var(--primary);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-full);
+}
+
+.badge-primary {
+  background-color: var(--primary-soft);
+  color: var(--primary);
+}
+
+.badge-secondary {
+  background-color: var(--secondary-soft);
+  color: var(--secondary);
+}
+
+.badge-accent {
+  background-color: var(--accent-light);
+  color: #925800;
+  border: 1px solid rgba(245, 179, 1, 0.4);
+}
+
+/* Cards */
+.card {
+  background-color: var(--neutral-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--neutral-300);
+  transform: translateY(-2px);
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--neutral-800);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-white);
+  color: var(--neutral-900);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* Section Wrapper */
+.section {
+  padding: 60px 0;
+}
+
+.section-title-wrap {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px auto;
+}
+
+.section-subtitle {
+  color: var(--secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  color: var(--neutral-600);
+  font-size: 1.05rem;
+}
+
+/* Responsive Phone & Tablet Styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    padding-bottom: 65px; /* Space for MobileBottomBar */
+  }
+
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .header-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .section {
+    padding: 36px 0 !important;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    padding: 16px !important;
+    border-radius: 12px;
+  }
+
+  .form-control {
+    font-size: 16px !important; /* Prevents auto-zoom on mobile safari */
+    padding: 10px 12px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.88rem;
+  }
+
+  .btn-lg {
+    padding: 12px 18px;
+    font-size: 0.92rem;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+  }
+
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hero buttons stacking on mobile */
+  .hero-buttons-wrap {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .hero-buttons-wrap > * {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* 26 Districts 2-column grid on phones */
+  .districts-home-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .district-card-btn {
+    padding: 10px 8px !important;
+    font-size: 0.80rem !important;
+  }
+
+  /* District Page Sidebar layout */
+  .district-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Safe bottom padding for fixed mobile bottom nav bar */
+  body {
+    padding-bottom: 74px !important;
+  }
+
+  /* ID Card and printable receipt mobile formatting */
+  .id-card-both-wrap {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .id-card-container {
+    max-width: 100% !important;
+  }
+
+  .receipt-header-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .receipt-member-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .receipt-photo-box {
+    margin: 0 auto !important;
+  }
+
+  .receipt-details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .receipt-sigs-row {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .section {
+    padding: 28px 0 !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .card {
+    padding: 14px !important;
+  }
+
+  .districts-home-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .districts-home-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Print Styles for Membership ID Card & Receipt */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+  body * {
+    visibility: hidden !important;
+  }
+  #printable-id-card, #printable-id-card *,
+  #printable-receipt, #printable-receipt * {
+    visibility: visible !important;
+  }
+  #printable-id-card {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  #printable-receipt {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16px 20px !important;
+    border: 2px solid #1A2B4C !important;
+    border-radius: 8px !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+}
